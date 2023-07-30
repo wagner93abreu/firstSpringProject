@@ -1,6 +1,6 @@
-package com.example.demo.usuario;
+package com.example.demo.domain.usuario;
 
-import com.example.demo.endereco.DadosEndereco;
+import com.example.demo.domain.endereco.DadosEndereco;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -13,6 +13,6 @@ public record DadosCadastroUsuario(
         @NotBlank           String telefone,
         @NotBlank           String usuario,
         @NotNull            Papel papel,
-        @NotNull @Valid     DadosEndereco endereco ) {
+        @NotNull @Valid DadosEndereco endereco ) {
 
 }

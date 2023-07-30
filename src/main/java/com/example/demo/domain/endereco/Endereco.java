@@ -1,6 +1,5 @@
-package com.example.demo.endereco;
+package com.example.demo.domain.endereco;
 
-import com.example.demo.usuario.DadosAtualizacaoUsuario;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

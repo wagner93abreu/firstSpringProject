@@ -1,4 +1,4 @@
-package com.example.demo.usuario;
+package com.example.demo.domain.usuario;
 
 public enum Papel {
     USUARIO,

@@ -1,4 +1,4 @@
-package com.example.demo.usuario;
+package com.example.demo.domain.usuario;
 
 public record DadosListagemUsuario(Long id, String nome, String email, String telefone, String usuario, Papel papel ) {
 

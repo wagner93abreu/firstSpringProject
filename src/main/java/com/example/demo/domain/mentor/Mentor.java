@@ -1,19 +1,19 @@
-package com.example.demo.usuario;
+package com.example.demo.domain.mentor;
 
-import com.example.demo.endereco.Endereco;
+import com.example.demo.domain.endereco.Endereco;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Table(name = "usuarios")
-@Entity(name = "Usuario")
+@Table(name = "mentores")
+@Entity(name = "mentor")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Usuario {
+public class Mentor {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,7 +21,6 @@ public class Usuario {
     private String email;
     private String telefone;
     private String usuario;
-    private Boolean admin = false;
     private Boolean active = false;
 
     @Enumerated(EnumType.STRING)
@@ -30,19 +29,18 @@ public class Usuario {
     @Embedded
     private Endereco endereco;
 
-    public Usuario(DadosCadastroUsuario dados) {
+    public Mentor(DadosCadastroMentor dados) {
         this.nome = dados.nome();
         this.email = dados.email();
         this.telefone = dados.telefone();
         this.usuario = dados.usuario();
         this.papel = dados.papel();
         this.endereco = new Endereco(dados.endereco());
-        this.admin = false;
         this.active = true;
 
     }
 
-    public void atualizarInformacoes(DadosAtualizacaoUsuario dados) {
+    public void atualizarInformacoes(DadosAtualizacaoMentor dados) {
         if(dados.nome() != null){
             this.nome = dados.nome();
         }
